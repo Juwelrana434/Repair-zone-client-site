@@ -5,14 +5,11 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ProtectedRout from "../component/ProtectedRout/ProtectedRout";
-
-
-
-
 import AddServices from './../Pages/AddServices';
 import ServiceDetails from './../Pages/ServiceDetails';
 import BookingServices from './../Pages/BookingServices';
 import BookingStatus from './../Pages/BookingStatus';
+import AllServices from "../Pages/AllServices";
 
 Root;
 
@@ -76,6 +73,10 @@ const router = createBrowserRouter([
             <BookingStatus></BookingStatus>
           </ProtectedRout>
         ),
+      },
+      {
+        path: "/allServices",
+        element: <AllServices></AllServices>,
       },
     ],
   },

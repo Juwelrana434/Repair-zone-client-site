@@ -2,6 +2,7 @@
 import { useEffect} from "react";
 import Carousel from './../component/Carousel';
 import PopularServices from './PopularServices';
+import { Link } from "react-router-dom";
 const Home = () => {
   useEffect(() => {
     document.title = "Home";
@@ -14,7 +15,7 @@ const Home = () => {
     <h1 className="text-center text-lime-900 text-3xl font-bold my-10"> Most Popular Services</h1>
     <h1>Quality Service is Our Guarantee</h1>
     <PopularServices></PopularServices>
-    <div className="mx-auto text-center"><button className="btn btn-primary">Show All</button></div>
+    <div className="mx-auto text-center"><Link to='/allServices'><button className="btn btn-primary">Show All</button></Link></div>
       
     </div>
   );
