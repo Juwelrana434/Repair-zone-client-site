@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 const ServicesCard = ({ service }) => {
   const {
     service_image,
+    _id,
     service_name,
     service_description,
     service_provider,
@@ -8,22 +10,32 @@ const ServicesCard = ({ service }) => {
   } = service;
   return (
     <div>
-      <div className="grid lg:md:grid-cols-2 gap-6 my-4 border-2 rounded-lg p-4">
-        <div>
-          <img
-            src={service_image}
-            className="w-full h-full my-4"
-          />
-        </div>
-        <div>
-          <h1>{service_name}</h1>
-          <h1>{service_description}</h1>
-          {/* <h1>{service_provider.name}</h1> */}
-          <h1>{service_price}</h1>
-          <div className="flex justify-between items-end"><button className="btn btn-primary">View Details</button>
-          <button className="btn btn-primary">Show All</button></div>
-        </div>
-      </div>
+      <div className="grid lg:md:grid-cols-2 gap-6 my-4  p-4 m-4">
+     
+     <div className="card w-full bg-base-100 shadow-xl lg:md:p-6 p-2">
+ <img src={service_image} className="h-96 rounded-xl" />
+ <div className="card-body">
+   <h2 className="card-title">{service_name}</h2>
+   <p>{service_description}</p>
+   <h1 className="text-xl font-bold"> Price: {service_price}</h1>
+   <div className="card-actions justify-end">
+   <Link to={`/booking/${_id}`}><button className="btn btn-primary">Book Now</button></Link>
+   </div>
+ </div>
+</div>
+<div className="card w-full bg-base-100 shadow-xl lg:md:p-6 p-2">
+ <img src={service_provider?.image} className="h-96 rounded-xl" />
+ <div className="card-body">
+   <h2 className="card-title"> Service Provider  {service_provider?.name}</h2>
+   <div className="card-actions justify-end">
+     
+   </div>
+ </div>
+</div>
+</div>
+        
+      
+      
     </div>
   );
 };

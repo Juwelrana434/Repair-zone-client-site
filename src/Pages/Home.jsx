@@ -23,6 +23,7 @@ const Home = () => {
     <h1 className="text-center text-lime-900 text-3xl font-bold my-10"> Most Popular Services</h1>
     <h1>Quality Service is Our Guarantee</h1>
     <PopularServices></PopularServices>
+    <div className="mx-auto text-center"><button className="btn btn-primary">Show All</button></div>
       {/* Tourists Spots section start  */}
       {/* <div className="text-center text-lime-900 text-3xl font-bold my-10">
         

@@ -6,11 +6,12 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ProtectedRout from "../component/ProtectedRout/ProtectedRout";
 import Mylist from "./../Pages/Mylist";
-import TourSpotDetail from "../Pages/TourSpotDetail";
 import AllTouristSpot from "../Pages/AllTouristSpot";
 import TourSpotUpdate from "../Pages/TourSpotUpdate";
 import Bangladesh from "../Pages/Bangladesh";
 import AddServices from './../Pages/AddServices';
+import ServiceDetails from './../Pages/ServiceDetails';
+import BookingServices from './../Pages/BookingServices';
 
 Root;
 
@@ -45,15 +46,27 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/tourspot/:id",
+        path: "/details/:id",
         element: (
           <ProtectedRout>
-            <TourSpotDetail></TourSpotDetail>
+            <ServiceDetails></ServiceDetails>
           </ProtectedRout>
         ),
         loader: ({ params }) =>
           fetch(
-            `https://dream-destination-server.vercel.app/Tourist/${params.id}`
+            `http://localhost:5000/services/${params.id}`
+          ),
+      },
+      {
+        path: "/booking/:id",
+        element: (
+          <ProtectedRout>
+            <BookingServices></BookingServices>
+          </ProtectedRout>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/services/${params.id}`
           ),
       },
 
