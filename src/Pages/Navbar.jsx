@@ -26,8 +26,8 @@ const Navbar = () => {
   <div tabIndex={0} role="button" className="">DashBoard</div>
   <ul tabIndex={0} className="dropdown-content z-[10] menu p-2 shadow bg-base-100 rounded-box w-36">
     <li><NavLink to='/addServices'>Add Service</NavLink></li>
+    <li><NavLink to='/booked'>Booked-Service</NavLink></li>
     <li><a>Manage Service</a></li>
-    <li><a>Booked-Service</a></li>
     <li><a>Service-To-Do</a></li>
   </ul>
 </div></li>:( <li></li>)}

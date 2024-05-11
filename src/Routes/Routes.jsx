@@ -5,13 +5,14 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ProtectedRout from "../component/ProtectedRout/ProtectedRout";
-import Mylist from "./../Pages/Mylist";
-import AllTouristSpot from "../Pages/AllTouristSpot";
-import TourSpotUpdate from "../Pages/TourSpotUpdate";
-import Bangladesh from "../Pages/Bangladesh";
+
+
+
+
 import AddServices from './../Pages/AddServices';
 import ServiceDetails from './../Pages/ServiceDetails';
 import BookingServices from './../Pages/BookingServices';
+import BookingStatus from './../Pages/BookingStatus';
 
 Root;
 
@@ -24,10 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>
-          fetch(
-            "https://dream-destination-server.vercel.app/Tourist/"
-          ),
+    
       },
       {
         path: "/login",
@@ -44,6 +42,7 @@ const router = createBrowserRouter([
             <AddServices></AddServices>
           </ProtectedRout>
         ),
+  
       },
       {
         path: "/details/:id",
@@ -69,38 +68,14 @@ const router = createBrowserRouter([
             `http://localhost:5000/services/${params.id}`
           ),
       },
-
+      
       {
-        path: "/mylist",
+        path: "/booked",
         element: (
           <ProtectedRout>
-            <Mylist></Mylist>
+            <BookingStatus></BookingStatus>
           </ProtectedRout>
         ),
-      },
-      {
-        path: "/alltourist",
-        element: <AllTouristSpot></AllTouristSpot>,
-        loader: () =>
-          fetch(
-            "https://dream-destination-server.vercel.app/Tourist"
-          ),
-      },
-      {
-        path: "/update/:id",
-        element: <TourSpotUpdate></TourSpotUpdate>,
-        loader: ({ params }) =>
-          fetch(
-            `https://dream-destination-server.vercel.app/Tourist/email/${params.id}`
-          ),
-      },
-      {
-        path: "/bangladesh/:country",
-        element: <Bangladesh></Bangladesh>,
-        loader: ({ params }) =>
-          fetch(
-            `https://dream-destination-server.vercel.app/Tourist/country/${params.country}`
-          ),
       },
     ],
   },

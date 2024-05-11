@@ -3,28 +3,32 @@ import Swal from 'sweetalert2'
 import { AuthContext } from '../component/AuthProvider';
 const AddServices = () => {
   useEffect(() => {
-    document.title = "Add Tourist spot";
+    document.title = "Add Services";
     })
   const { user, logOut } = useContext(AuthContext);
 console.log(user.email);
     const handleAddService = event => {
         event.preventDefault();
         const form = event.target;
-        const photo = form.photo.value;
-        const serviceName = form.serviceName.value; // Fixed typo
-        const serviceArea = form.serviceArea.value;
-        const description = form.description.value;
-        const price = form.price.value;
+        const service_image = form.photo.value;
+        const 
+        service_name = form.serviceName.value; // Fixed typo
+        const location = form.serviceArea.value;
+        const service_description = form.description.value;
+        const service_price = form.price.value;
         const name = user.displayName;
         const image = user.photoURL;
         const email = user.email;
         
     
-        const newAddService = { photo, serviceName, serviceArea, location,description, price ,image,email, name }; // Fixed property name
+        const newAddService = { service_image, 
+          service_name, location, location, service_description
+          , 
+          service_price ,image,email, name }; // Fixed property name
         console.log(newAddService);
         // send to server
         
-        fetch('https://dream-destination-server.vercel.app/Tourist',{
+        fetch('http://localhost:5000/services',{
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(newAddService )
@@ -49,7 +53,7 @@ console.log(user.email);
     
         <div>
              <div className="m-10 bg-[#f0f1f4] text-black font-bold">
-        <h1 className="text-center pt-6 text-[45px]">Add Tourist Spot </h1>
+        <h1 className="text-center pt-6 text-[45px]">Add Services </h1>
 
         <form onSubmit={handleAddService}>
           <div className="grid lg:md:grid-cols-2 gap-6">
@@ -59,7 +63,7 @@ console.log(user.email);
               <input
                 type="text"
                 name="photo"
-                placeholder="Enter image URL)"
+                placeholder="Enter image URL"
                 className="w-full p-2 mt-4"
               />
               <label>Service Name</label>

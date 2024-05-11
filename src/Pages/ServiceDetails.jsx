@@ -6,6 +6,7 @@ const service = useLoaderData();
 const {
     service_image,
     _id,
+    location,
     service_name,
     service_description,
     service_provider,
@@ -48,7 +49,8 @@ const {
 <div className="card w-full bg-base-100 shadow-xl">
   <img src={service_provider?.image}  />
   <div className="card-body">
-    <h2 className="card-title">{service_provider?.name}</h2>
+    <h2 className="card-title"> Services provider {service_provider?.name}</h2>
+    <h2 className="card-title"> Service provider coverage Area  {location}</h2>
     <div className="card-actions justify-end">
       
     </div>
