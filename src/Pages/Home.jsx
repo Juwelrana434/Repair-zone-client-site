@@ -1,12 +1,13 @@
 
-import Home6 from "../../src/assets/im1.jpg";
-import Home7 from "../../src/assets/im2.jpg";
-import Home8 from "../../src/assets/im3.jpg";
+// import Home6 from "../../src/assets/im1.jpg";
+// import Home7 from "../../src/assets/im2.jpg";
+// import Home8 from "../../src/assets/im3.jpg";
 
 // import Home8 from "../../src/assets/im3.jpg";
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Carousel from './../component/Carousel';
+import PopularServices from './PopularServices';
 const Home = () => {
   useEffect(() => {
     document.title = "Home";
@@ -19,9 +20,12 @@ const Home = () => {
   return (
     <div>
     <div className="mx-4"><Carousel></Carousel></div>
+    <h1 className="text-center text-lime-900 text-3xl font-bold my-10"> Most Popular Services</h1>
+    <h1>Quality Service is Our Guarantee</h1>
+    <PopularServices></PopularServices>
       {/* Tourists Spots section start  */}
-      <div className="text-center text-lime-900 text-3xl font-bold my-10">
-        <h1> Most Popular Services</h1>
+      {/* <div className="text-center text-lime-900 text-3xl font-bold my-10">
+        
       </div>
       <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2">
         {tourspots.map((tourspot) => (
@@ -59,14 +63,14 @@ const Home = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Tourists Spots section end  */}
 
       {/* country section start  */}
 
       {/* to={`/tourspot/${tourspot._id}`} */}
-      <div>
+      {/* <div>
         <h1 className="text-center text-2xl font-bold my-8 ">
           Find Out Your Dream Destination{" "}
         </h1>
@@ -90,11 +94,11 @@ const Home = () => {
             <Link to="/bangladesh/Cambodia">Cambodia</Link>
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* country section END  */}
       {/* Extra two section Discount section start */}
-      <div className="mx-4 mb-6">
+      {/* <div className="mx-4 mb-6">
         <h1 className="text-3xl font-bold text-center my-6">
           Hurry up ! Collect your discount
         </h1>
@@ -122,10 +126,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Extra two section Discount section end */}
       {/* Extra two awesome Tour section start */}
-      <div className="my-6 mx-4">
+      {/* <div className="my-6 mx-4">
         <div>
           <h1 className="text-center text-2xl font-bold my-8 ">Awesome Tour</h1>
           <div className="grid lg:md:grid-cols-5 grid-cols-3 gap-4 font-bold text-[#070bee] shadow-md my-6">
@@ -188,7 +192,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Extra two awesome Tour section end */}
     </div>
   );
