@@ -1,23 +1,37 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import "../App.css";
 
 const AllServices = () => {
   const [addServices, setAddServices] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/addServices")
-      .then((res) => res.json())
-      .then((data) => setAddServices(data));
-  }, []);
-  // console.log(addServices);
   const [itemsPerPage, setItemsPerPage] = useState(2);
+  const [currentPage, setCurrentPage] = useState(0);
   const { count } = useLoaderData();
   console.log(count);
+  useEffect(() => {
+    fetch(`http://localhost:5000/addServices?page=${currentPage}&size=${itemsPerPage}`)
+      .then((res) => res.json())
+      .then((data) => setAddServices(data));
+  }, [currentPage]);
+  // console.log(addServices);
+  // const [itemsPerPage, setItemsPerPage] = useState(2);
+  // const [currentPage, setCurrentPage] = useState(0);
+  // const { count } = useLoaderData();
+  // console.log(count);
 
   const numberOfPages = Math.ceil(count / itemsPerPage);
   const pages = [...Array(numberOfPages).keys()];
-  const handlePage = e =>{
-  
-  }
+  const handlePage = (e) => {
+    const val = parseInt(e.target.value);
+    console.log(val);
+    setItemsPerPage(val);
+
+    // const handlePre = () => {
+    //   if (currentPage > 0) {
+    //     setCurrentPage(currentPage - 1);
+    //   }
+    // };
+  };
   return (
     <div>
       <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2">
@@ -43,12 +57,19 @@ const AllServices = () => {
         ))}
       </div>
       <div className="text-center">
+        {/* <h1>current page {currentPage}</h1> */}
+        {/* <button>Previous</button> */}
         {pages.map((page) => (
-          <button className="mx-6 my-10" key={page}>
+          <button
+            className="mx-6 my-10"
+            onClick={() => setCurrentPage(page)}
+            key={page}
+          >
             {page}
           </button>
         ))}
-        <select value={itemsPerPage} onChange={handlePage} name="" id="">
+        {/* <button>next</button> */}
+        <select value={itemsPerPage} onChange={handlePage} className="ml-10">
           <option value="2">2</option>
           <option value="4">4</option>
           <option value="6">6</option>

@@ -10,6 +10,7 @@ import ServiceDetails from './../Pages/ServiceDetails';
 import BookingServices from './../Pages/BookingServices';
 import BookingStatus from './../Pages/BookingStatus';
 import AllServices from "../Pages/AllServices";
+import ManageServices from './../Pages/ManageServices';
 
 Root;
 
@@ -81,6 +82,14 @@ const router = createBrowserRouter([
           fetch(
             'http://localhost:5000/servicesCount'
           ),
+      },
+      {
+        path: "/manageServices",
+        element: (
+          <ProtectedRout>
+            <ManageServices></ManageServices>
+          </ProtectedRout>
+        ),
       },
     ],
   },
