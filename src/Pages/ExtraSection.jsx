@@ -1,4 +1,4 @@
-import image from "../../src/assets/images.jpg";
+import image from "../../src/assets/ima.jpg";
 import { GiAlarmClock } from "react-icons/gi";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 import { ImManWoman } from "react-icons/im";
