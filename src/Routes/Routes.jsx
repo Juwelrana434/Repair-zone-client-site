@@ -11,6 +11,7 @@ import BookingServices from './../Pages/BookingServices';
 import BookingStatus from './../Pages/BookingStatus';
 import AllServices from "../Pages/AllServices";
 import ManageServices from './../Pages/ManageServices';
+import UpdateAddServices from './../Pages/UpdateAddServices';
 
 Root;
 
@@ -88,6 +89,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRout>
             <ManageServices></ManageServices>
+          </ProtectedRout>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <ProtectedRout>
+            <UpdateAddServices></UpdateAddServices>
           </ProtectedRout>
         ),
       },
