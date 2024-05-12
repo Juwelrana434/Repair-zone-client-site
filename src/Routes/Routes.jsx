@@ -99,6 +99,10 @@ const router = createBrowserRouter([
             <UpdateAddServices></UpdateAddServices>
           </ProtectedRout>
         ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/addService/email/${params.id}`
+          ),
       },
     ],
   },

@@ -5,14 +5,13 @@ const AddServices = () => {
   useEffect(() => {
     document.title = "Add Services";
     })
-  const { user, logOut } = useContext(AuthContext);
+  const { user} = useContext(AuthContext);
 console.log(user.email);
     const handleAddService = event => {
         event.preventDefault();
         const form = event.target;
         const service_image = form.photo.value;
-        const 
-        service_name = form.serviceName.value; // Fixed typo
+        const service_name = form.serviceName.value; // Fixed typo
         const location = form.serviceArea.value;
         const service_description = form.description.value;
         const service_price = form.price.value;
@@ -22,7 +21,7 @@ console.log(user.email);
         
     
         const newAddService = { service_image, 
-          service_name, location, location, service_description
+          service_name, location, service_description
           , 
           service_price ,image,email, name }; // Fixed property name
         console.log(newAddService);

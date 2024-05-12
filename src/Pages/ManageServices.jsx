@@ -13,7 +13,7 @@ const ManageServices = () => {
 
   // my add service  data delete
   const handleDelete = (id) => {
-    console.log(id, "delete");
+    // console.log(id, "delete");
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -24,12 +24,9 @@ const ManageServices = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `http://localhost:5000/addServices/${id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`http://localhost:5000/addServices/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -40,7 +37,9 @@ const ManageServices = () => {
                 icon: "success",
               });
               console.log("delete conform");
-              const remain = addServices.filter(addService => addService._id !== id);
+              const remain = addServices.filter(
+                (addService) => addService._id !== id
+              );
               setAddServices(remain);
             }
           });
