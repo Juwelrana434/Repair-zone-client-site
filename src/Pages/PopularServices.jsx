@@ -6,11 +6,11 @@ const PopularServices = () => {
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
-      .then((data) => setServices(data));
+      .then((data) => setServices(data.slice(0,6)));
   }, []);
+  
   return (
     <div>
-      <h1>{services.length}</h1>
       <div>
         {services.map((service) => (
           <ServicesCard 

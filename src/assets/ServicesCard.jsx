@@ -15,7 +15,7 @@ const ServicesCard = ({ service }) => {
      
      <div className="card w-full bg-base-100 shadow-xl lg:md:p-6 p-2">
  <img src={service_image} className="h-96 rounded-xl" />
- <div className="card-body">
+ <div className="card-body h-52">
    <h2 className="card-title">{service_name}</h2>
    <p>{service_description}</p>
    <h1 className="text-xl font-bold"> Price: {service_price}</h1>

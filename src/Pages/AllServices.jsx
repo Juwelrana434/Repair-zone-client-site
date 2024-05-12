@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllServices = () => {
@@ -10,6 +10,11 @@ const [addServices, setAddServices] = useState([]);
           .then((data) => setAddServices(data));
       }, []);
       console.log(addServices);
+      const {count} = useLoaderData();
+      console.log(count);
+      const itemsPerPage = 2;
+      const numberOfPages = Math.ceil(count / itemsPerPage);
+      const pages = [...Array(numberOfPages).keys()];
     return (
         <div>
              <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2">
@@ -29,6 +34,10 @@ const [addServices, setAddServices] = useState([]);
 </div>
           </div>
         ))}
+      </div>
+      <div>
+      
+      
       </div>
         </div>
     );

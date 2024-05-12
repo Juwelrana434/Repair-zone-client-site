@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./../component/AuthProvider";
-import BookingTable from "./BookingTable";
 import { Link } from "react-router-dom";
 
 const BookingStatus = () => {
@@ -25,7 +24,7 @@ const BookingStatus = () => {
                 <th>Services Name</th>
                 <th>Cost</th>
                 <th>Provider email</th>
-                <th colSpan={2}>Action</th>
+                <th colSpan={2}>Status</th>
               </div>
             </tr>
           </thead>
@@ -39,7 +38,7 @@ const BookingStatus = () => {
 
                   {/* <th>1</th> */}
                   <div className="grid grid-cols-5 gap-2 w-full  my-4 px-4">
-                    <img src={booking.photo} />
+                    <img src={booking.photo} className="w-20 h-20 rounded-full"/>
                     <h1>{booking.serviceName}</h1>
                     <h1> ${booking.price}</h1>
                     <h1>{booking.providerEmail}</h1>
@@ -48,7 +47,7 @@ const BookingStatus = () => {
                       <h1 className="mr-10">
                         <Link to={`/update/${booking._id}`}>
                           <button className="btn btn-success w-full">
-                            Update
+                            Working
                           </button>
                         </Link>
                       </h1>
@@ -57,7 +56,7 @@ const BookingStatus = () => {
                           onClick={() => handleDelete(booking._id)}
                           className="btn btn-error w-full"
                         >
-                          Delete
+                          pending
                         </button>
                       </h1>
                     </div>
@@ -65,30 +64,6 @@ const BookingStatus = () => {
                 </div>
               ))}
             </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {bookings.map((booking) => (
-              <BookingTable key={booking._id} booking={booking}></BookingTable>
-            ))}
           </tbody>
         </table>
       </div>
