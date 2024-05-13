@@ -17,6 +17,7 @@ const Home = () => {
     <PopularServices></PopularServices>
     <div className="mx-auto text-center"><Link to='/allServices'><button className="btn btn-primary">Show All</button></Link></div>
       <ExtraSection></ExtraSection>
+      
     </div>
   );
 };

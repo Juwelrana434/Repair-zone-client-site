@@ -1,10 +1,16 @@
 import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../component/AuthProvider";
+import { useLoaderData } from "react-router-dom";
+
+
 const UpdateAddServices = () => {
   useEffect(() => {
     document.title = "Update Services";
   });
+  const srvicesUpdate = useLoaderData();
+  const  {service_image, service_name,location, service_description, service_price, _id } = srvicesUpdate
+  console.log(srvicesUpdate);
   const { user } = useContext(AuthContext);
 //   console.log(user.email);
   const handleUpdateService = (event) => {
@@ -19,7 +25,7 @@ const UpdateAddServices = () => {
     const image = user.photoURL;
     const email = user.email;
 
-    const newAddService = {
+    const updateService = {
       service_image,
       service_name,
       location,
@@ -29,32 +35,34 @@ const UpdateAddServices = () => {
       email,
       name,
     }; // Fixed property name
-    console.log(newAddService);
+    // console.log(updateService);
 
     // send to server
 
-    fetch("http://localhost:5000/services", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newAddService),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
+    fetch(`http://localhost:5000/services/${_id}`,{
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(updateService )
+        })
+        .then(res => res.json())
+        .then(data =>{
+         console.log(data)
+         if(data.modifiedCount > 0){ 
           Swal.fire({
-            title: "Success!",
-            text: "User added successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        }
-      });
+            title: 'Success!',
+            text: 'survices update successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+         }
+         
+         
+         }) 
   };
   return (
     <div>
       <div className="m-10 bg-[#f0f1f4] text-black font-bold">
-        <h1 className="text-center pt-6 text-[45px]">Add Services </h1>
+        <h1 className="text-center pt-6 text-[45px]">Update Services </h1>
 
         <form onSubmit={handleUpdateService}>
           <div className="grid lg:md:grid-cols-2 gap-6">
