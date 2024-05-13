@@ -9,7 +9,7 @@ const ExtraOne = () => {
     useEffect(() => {
       fetch("http://localhost:5000/comment")
         .then((res) => res.json())
-        .then((data) => setComment(data.slice(0,3)));
+        .then((data) => setComment(data.slice(0,2)));
     }, []);  
 
 console.log(comments);
@@ -54,7 +54,7 @@ console.log(comments);
       });
   };
   return (
-    <div>
+    <div className="mx-4 my-16">
       <div className="grid lg:md:grid-cols-2">
         
         <div>
@@ -98,6 +98,7 @@ console.log(comments);
                 <textarea
                   type="text"
                   name="text"
+                  rows="4"
                   required
                   placeholder="massage"
                   className="w-full p-2 mt-4"
@@ -113,7 +114,8 @@ console.log(comments);
             </form>
           </div>
         </div>
-        <div className="bg-[#eb4a62]">
+        {/* [#eb4a62] */}
+        <div className="bg-[#2980B9]">
         <h1 className="text-white font-bold text-center mt-4">WHAT OUR CLIENTS THINK</h1>
         <h1 className="text-white font-bold text-center text-2xl my-4">Our Testimonials</h1>
         <div>
