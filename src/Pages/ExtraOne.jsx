@@ -1,10 +1,19 @@
 
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 
 
 const ExtraOne = () => {
-  
+    const [comments, setComment] = useState([]);
+    useEffect(() => {
+      fetch("http://localhost:5000/comment")
+        .then((res) => res.json())
+        .then((data) => setComment(data.slice(0,3)));
+    }, []);  
+
+console.log(comments);
+
 
   const handleAddComment = (event) => {
     event.preventDefault();
@@ -49,7 +58,7 @@ const ExtraOne = () => {
       <div className="grid lg:md:grid-cols-2">
         
         <div>
-          <div className="m-10 bg-[#f0f1f4] text-black font-bold">
+          <div className="bg-[#f0f1f4] text-black font-bold">
             <h1 className="text-center pt-6 text-[45px]">Send us a Message </h1>
 
             <form onSubmit={handleAddComment}>
@@ -57,6 +66,7 @@ const ExtraOne = () => {
                 <input
                   type="text"
                   name="name"
+                  required
                   placeholder="Name*"
                   className="w-full p-2 mt-4"
                 />
@@ -73,6 +83,7 @@ const ExtraOne = () => {
                 <input
                   type="email"
                   name="email"
+                  required
                   placeholder="Email*"
                   className="w-full p-2 mt-4"
                 />
@@ -87,6 +98,7 @@ const ExtraOne = () => {
                 <textarea
                   type="text"
                   name="text"
+                  required
                   placeholder="massage"
                   className="w-full p-2 mt-4"
                 />
@@ -101,7 +113,26 @@ const ExtraOne = () => {
             </form>
           </div>
         </div>
-        <div className="bg-[#eb4a62]"></div>
+        <div className="bg-[#eb4a62]">
+        <h1 className="text-white font-bold text-center mt-4">WHAT OUR CLIENTS THINK</h1>
+        <h1 className="text-white font-bold text-center text-2xl my-4">Our Testimonials</h1>
+        <div>
+        {comments.map((comment) =>(<div key={comment._id}>
+        
+            <div className="chat chat-start">
+  <div className="chat-image avatar">
+    <div className="w-20 rounded-full ">
+      <img  src={comment?.photo} />
+    </div>
+  </div>
+  <div className="chat-bubble bg-white text-black my-4"><h1>{comment.message}</h1></div>
+</div>
+
+
+        </div>))}
+        </div>
+        
+        </div>
       </div>
     </div>
   );
