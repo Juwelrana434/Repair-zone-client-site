@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
 import { AuthContext } from "../component/AuthProvider";
@@ -25,24 +23,24 @@ const Register = () => {
     const confirmPassword = e.target.confirmPassword.value;
     
 
-    // if (password.length < 6) {
-    //   setError("Password must be at least 6 characters");
-    //   return;
-    // }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
 
-    // if (!/^(?=.*[A-Z]).*$/.test(password)) {
-    //   setError("Must have an Uppercase letter in the password");
-    //   return;
-    // }
-    // if (!/^(?=.*[a-z]).*$/.test(password)) {
-    //   setError("Must have an Lowercase letter in the password");
-    //   return;
-    // }
+    if (!/^(?=.*[A-Z]).*$/.test(password)) {
+      setError("Must have an Uppercase letter in the password");
+      return;
+    }
+    if (!/^(?=.*[a-z]).*$/.test(password)) {
+      setError("Must have an Lowercase letter in the password");
+      return;
+    }
 
-    // if (password !== confirmPassword) {
-    //   setError("Passwords do not match");
-    //   return;
-    // }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
 
     console.log(name, email, photo, password, confirmPassword);
     registerUser(email, password)

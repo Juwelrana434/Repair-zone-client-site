@@ -26,12 +26,13 @@ const BookingServices = () => {
             const photo = service_image;
             const serviceName = service_name; // Fixed typo
             const date = form.date.value;
-            const providerName= service_provider.name; //
+            const providerName= service_provider?.name; //
             const providerEmail = servicer_email;
             const instruction = form.instruction.value;
             const price = service_price;
             const userName = user.displayName;
             const email = user.email;
+            
             
         
             // const bookService = { serviceId,photo, serviceName, date, providerName, location,instruction, price ,userName,email, providerEmail}; // Fixed property name
@@ -116,7 +117,7 @@ const BookingServices = () => {
               readOnly
                 type="text"
                 name="providerName"
-                defaultValue={service_provider.name}
+                defaultValue={service_provider?.name}
                 placeholder='provider name'
                 className="w-full p-2 mt-4"
               />
