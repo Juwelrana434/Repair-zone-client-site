@@ -12,7 +12,7 @@ const ExtraOne = () => {
         .then((data) => setComment(data.slice(0,2)));
     }, []);  
 
-console.log(comments);
+// console.log(comments);
 
 
   const handleAddComment = (event) => {

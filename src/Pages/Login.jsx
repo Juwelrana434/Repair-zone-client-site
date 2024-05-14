@@ -25,18 +25,19 @@ const Login = () => {
       };
       const handleGoogleLogin = async() => {
       
+        // await googleLogin()
         await googleLogin()
-            // toast.success('successfully logged in');
-            // navigate("/")
-            // .then(result => setUser(result.user))
-      try {
-        await googleLogin()
-        toast.success('successfully logged in');
-        navigate("/")
-      } catch (err) {
-      console.log(err)
-      toast.error(err?.message)
-      }
+            toast.success('successfully logged in');
+            navigate("/")
+            .then(result => setUser(result.user))
+      // try {
+      //   await googleLogin()
+      //   toast.success('successfully logged in');
+      //   navigate("/")
+      // } catch (err) {
+      // console.log(err)
+      // toast.error(err?.message)
+      // }
       
      }
       useEffect(() =>{

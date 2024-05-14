@@ -12,6 +12,7 @@ import BookingStatus from './../Pages/BookingStatus';
 import AllServices from "../Pages/AllServices";
 import ManageServices from './../Pages/ManageServices';
 import UpdateAddServices from './../Pages/UpdateAddServices';
+import ServicesToDo from './../Pages/ServicesToDo';
 
 Root;
 
@@ -103,6 +104,14 @@ const router = createBrowserRouter([
           fetch(
             `http://localhost:5000/services/${params.id}`
           ),
+      },
+      {
+        path: "/servicesToDo",
+        element: (
+          <ProtectedRout>
+           <ServicesToDo></ServicesToDo>
+          </ProtectedRout>
+        ),
       },
     ],
   },

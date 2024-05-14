@@ -6,7 +6,7 @@ const AddServices = () => {
     document.title = "Add Services";
     })
   const { user} = useContext(AuthContext);
-console.log(user.email);
+// console.log(user.email);
     const handleAddService = event => {
         event.preventDefault();
         const form = event.target;
