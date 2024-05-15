@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const ManageServices = () => {
   useEffect(() => {
-    document.title = "My List";
+    document.title = "Manage Services";
   });
   const { user } = useContext(AuthContext);
   const [addServices, setAddServices] = useState([]);
@@ -24,19 +24,19 @@ const ManageServices = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addServices/${id}`, {
+        fetch(`https://repair-zone-server-side.vercel.app/addServices/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // (console.logdata);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              console.log("delete conform");
+              // console.log("delete conform");
               const remain = addServices.filter(
                 (addService) => addService._id !== id
               );
@@ -49,7 +49,7 @@ const ManageServices = () => {
 
   //   my add services data read
   useEffect(() => {
-    fetch(`http://localhost:5000/addService/email/${user?.email}`)
+    fetch(`https://repair-zone-server-side.vercel.app/addService/email/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAddServices(data);

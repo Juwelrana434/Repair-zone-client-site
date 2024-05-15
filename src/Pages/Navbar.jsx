@@ -21,7 +21,7 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-  console.log(theme);
+  // console.log(theme);
   useEffect(() => {
     document.title = "Navbar";
   });
@@ -77,6 +77,7 @@ const Navbar = () => {
       {/* <li>
             <NavLink to="/about">About</NavLink>
           </li> */}
+          
     </>
   );
   return (
@@ -121,8 +122,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navlink}</ul>
         </div>
         <div className="navbar-end">
+          {/* search button */}
           <label className="input input-bordered flex items-center gap-2">
-            {/* search button */}
+          
             <input type="text" className="grow" placeholder="Search" />
             <svg
               xmlns="http://www.w3.org/2000/svg"

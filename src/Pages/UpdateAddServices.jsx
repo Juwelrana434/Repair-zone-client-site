@@ -10,7 +10,7 @@ const UpdateAddServices = () => {
   });
   const srvicesUpdate = useLoaderData();
   const  {service_image, service_name,location, service_description, service_price, _id } = srvicesUpdate
-  console.log(srvicesUpdate);
+  // console.log(srvicesUpdate);
   const { user } = useContext(AuthContext);
 //   console.log(user.email);
   const handleUpdateService = (event) => {
@@ -39,14 +39,14 @@ const UpdateAddServices = () => {
 
     // send to server
 
-    fetch(`http://localhost:5000/services/${_id}`,{
+    fetch(`https://repair-zone-server-side.vercel.app/services/${_id}`,{
         method: 'PUT',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(updateService )
         })
         .then(res => res.json())
         .then(data =>{
-         console.log(data)
+        //  console.log(data)
          if(data.modifiedCount > 0){ 
           Swal.fire({
             title: 'Success!',

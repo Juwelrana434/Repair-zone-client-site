@@ -2,6 +2,7 @@ import image from "../../src/assets/ima.jpg";
 import { GiAlarmClock } from "react-icons/gi";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 import { ImManWoman } from "react-icons/im";
+import 'animate.css';
 const ExtraSection = () => {
   return (
     <div className="m-4">
@@ -10,8 +11,8 @@ const ExtraSection = () => {
           <img src={image} className="w-full h-full" />
         </div>
         <div className=" bg-[#eb4a62]">
-        <h1 className="text-white font-bold text-xl ml-10 mt-10">THE TECH REPAIR EXPERTS</h1>
-        <h1 className="text-white font-bold text-2xl ml-10 my-4">Why Choose Us?</h1>
+        <h1 className="text-white font-bold text-xl ml-10 mt-10 animate__animated animate__lightSpeedInLeft ">THE TECH REPAIR EXPERTS</h1>
+        <h1 className="text-white font-bold text-2xl ml-10 my-4 animate__animated animate__lightSpeedInRight">Why Choose Us?</h1>
           <div>
           <h1 className="text-center text-xl font-bold text-white">Fast Repairs</h1>
             <div className="flex justify-start items-center my-4"><div className="mx-8"><GiAlarmClock className="bg-white text-[50px] text-[#eb4a62] rounded-full p-2" /></div>

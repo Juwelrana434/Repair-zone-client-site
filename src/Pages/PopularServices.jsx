@@ -4,7 +4,7 @@ import ServicesCard from "./../assets/ServicesCard";
 const PopularServices = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://repair-zone-server-side.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data.slice(0,6)));
   }, []);

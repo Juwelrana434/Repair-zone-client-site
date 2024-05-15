@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const BookingStatus = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `http://localhost:5000/booking?email=${user?.email}`;
+  const url = `https://repair-zone-server-side.vercel.app/booking?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -39,9 +39,9 @@ const BookingStatus = () => {
                   {/* <th>1</th> */}
                   <div className="grid grid-cols-5 gap-2 w-full  my-4 px-4">
                     <img src={booking.photo} className="w-20 h-20 rounded-full"/>
-                    <h1>{booking.serviceName}</h1>
-                    <h1> ${booking.price}</h1>
-                    <h1>{booking.providerEmail}</h1>
+                    <h1 className="animate__animated animate__bounce">{booking.serviceName}</h1>
+                    <h1 className="animate__animated animate__bounce"> ${booking.price}</h1>
+                    <h1 className="animate__animated animate__bounce">{booking.providerEmail}</h1>
                     <div className="grid grid-cols-2 gap-2">
                       {" "}
                       <h1 className="mr-10">

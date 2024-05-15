@@ -3,13 +3,16 @@ import { Link, useLoaderData } from "react-router-dom";
 import "../App.css";
 
 const AllServices = () => {
+  useEffect(() => {
+    document.title = "Services";
+    })
   const [addServices, setAddServices] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(2);
   const [currentPage, setCurrentPage] = useState(0);
   const { count } = useLoaderData();
-  console.log(count);
+  // console.log(count);
   useEffect(() => {
-    fetch(`http://localhost:5000/addServices?page=${currentPage}&size=${itemsPerPage}`)
+    fetch(`https://repair-zone-server-side.vercel.app/addServices?page=${currentPage}&size=${itemsPerPage}`)
       .then((res) => res.json())
       .then((data) => setAddServices(data));
   }, [currentPage]);
@@ -23,7 +26,7 @@ const AllServices = () => {
   const pages = [...Array(numberOfPages).keys()];
   const handlePage = (e) => {
     const val = parseInt(e.target.value);
-    console.log(val);
+    // console.log(val);
     setItemsPerPage(val);
 
     // const handlePre = () => {

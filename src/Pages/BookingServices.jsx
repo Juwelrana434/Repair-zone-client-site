@@ -4,6 +4,9 @@ import Swal from 'sweetalert2'
 import { AuthContext } from '../component/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 const BookingServices = () => {
+  useEffect(() => {
+    document.title = "booking";
+    })
     const service = useLoaderData();
     const {
         service_image,
@@ -18,7 +21,7 @@ const BookingServices = () => {
         document.title = "Booking Service";
         })
       const { user} = useContext(AuthContext);
-    console.log(user.email);
+    // console.log(user.email);
         const handleBookService = event => {
             event.preventDefault();
             const form = event.target;
@@ -37,17 +40,17 @@ const BookingServices = () => {
         
             // const bookService = { serviceId,photo, serviceName, date, providerName, location,instruction, price ,userName,email, providerEmail}; // Fixed property name
             const bookService = { serviceId,serviceName,userName,email, instruction,date,price,photo,providerName,providerEmail};
-            console.log(bookService);
+            // console.log(bookService);
             // send to server
             
-            fetch('http://localhost:5000/booking',{
+            fetch('https://repair-zone-server-side.vercel.app/booking',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(bookService)
             })
             .then(res => res.json())
             .then(data =>{
-             console.log(data)
+            //  console.log(data)
              if(data.insertedId){ 
               Swal.fire({
                 title: 'Success!',

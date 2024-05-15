@@ -1,4 +1,4 @@
-
+import 'animate.css';
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const ExtraOne = () => {
     const [comments, setComment] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/comment")
+      fetch("https://repair-zone-server-side.vercel.app/comment")
         .then((res) => res.json())
         .then((data) => setComment(data.slice(0,2)));
     }, []);  
@@ -31,18 +31,18 @@ const ExtraOne = () => {
       photo,
       name,
     }; // Fixed property name
-    console.log(addComment);
+    // console.log(addComment);
     
     // send to server
 
-    fetch("http://localhost:5000/comment", {
+    fetch("https://repair-zone-server-side.vercel.app/comment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addComment),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -127,7 +127,7 @@ const ExtraOne = () => {
       <img  src={comment?.photo} />
     </div>
   </div>
-  <div className="chat-bubble bg-white text-black my-4"><h1>{comment.message}</h1></div>
+  <div className="chat-bubble bg-white text-black my-4 animate__animated animate__backInLeft animate__delay-2s"><h1>{comment.message}</h1></div>
 </div>
 
 

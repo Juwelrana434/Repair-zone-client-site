@@ -1,4 +1,4 @@
-
+import 'animate.css';
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -39,9 +39,9 @@ export default function Carousel() {
         <SwiperSlide><div className="hero min-h-screen" style={{backgroundImage: `url(${Home1})`}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">Repairing Electronics, Restoring Connections</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <div className="text-left">
+      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold animate__animated animate__bounce animate__delay-2s">Repairing Electronics, <br />Restoring Connections</h1>
+      <p className="mb-5 animate__animated animate__fadeInTopLeft animate__delay-2s">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. <br /> In deleniti eaque aut repudiandae et a id nisi.</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>
@@ -49,9 +49,9 @@ export default function Carousel() {
         <SwiperSlide><div className="hero min-h-screen" style={{backgroundImage: `url(${Home5})`}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">Expert Electronic Repairs Done Right</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <div className="text-left">
+      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">Expert Electronic<br /> Repairs Done Right</h1>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. <br />In deleniti eaque aut repudiandae et a id nisi.</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>
@@ -59,9 +59,9 @@ export default function Carousel() {
         <SwiperSlide><div className="hero min-h-screen" style={{backgroundImage: `url(${Home2})`}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">Your Trusted Electronic Repair Specialists</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <div className="text-left">
+      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">Your Trusted Electronic<br /> Repair Specialists</h1>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi.<br /> In deleniti eaque aut repudiandae et a id nisi.</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>
@@ -69,9 +69,9 @@ export default function Carousel() {
         <SwiperSlide><div className="hero min-h-screen" style={{backgroundImage: `url(${Home3})`}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">We Fix Electronics, You Get Peace of Mind</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <div className="text-left">
+      <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">We Fix Electronics,<br /> You Get Peace of Mind</h1>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi.<br /> In deleniti eaque aut repudiandae et a id nisi.</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>
@@ -79,9 +79,9 @@ export default function Carousel() {
         <SwiperSlide><div className="hero min-h-screen" style={{backgroundImage: `url(${Home4})`}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content">
-    <div className="max-w-md">
+    <div className="text-left">
       <h1 className="lg:md:mb-5 lg:text-4xl md:text-3xl text-xl font-bold">Restore. Repair. Reconnect.</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. <br />In deleniti eaque aut repudiandae et a id nisi.</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>

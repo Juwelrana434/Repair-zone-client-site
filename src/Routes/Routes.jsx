@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/services/${params.id}`
+            `https://repair-zone-server-side.vercel.app/services/${params.id}`
           ),
       },
       {
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/services/${params.id}`
+            `https://repair-zone-server-side.vercel.app/services/${params.id}`
           ),
       },
       
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
         element: <AllServices></AllServices>,
         loader: () =>
           fetch(
-            'http://localhost:5000/servicesCount'
+            'https://repair-zone-server-side.vercel.app/servicesCount'
           ),
       },
       {
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/services/${params.id}`
+            `https://repair-zone-server-side.vercel.app/services/${params.id}`
           ),
       },
       {
