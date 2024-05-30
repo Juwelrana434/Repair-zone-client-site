@@ -1,6 +1,8 @@
 import 'animate.css';
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { Rating } from "@smastrom/react-rating";
+import '@smastrom/react-rating/style.css'
 
 
 
@@ -91,7 +93,8 @@ const ExtraOne = () => {
                 <input
                   type="number"
                   name="number"
-                  placeholder="Number*"
+                  placeholder="Give us Rating out of five*"
+                  min="1" max="5"
                   className="w-full p-2 mt-4"
                 />
                 <br />
@@ -119,14 +122,22 @@ const ExtraOne = () => {
         <h1 className="text-white font-bold text-center mt-4">WHAT OUR CLIENTS THINK</h1>
         <h1 className="text-white font-bold text-center text-2xl my-4">Our Testimonials</h1>
         <div>
-        {comments.map((comment) =>(<div key={comment._id}>
         
+        {comments.map((comment) =>(<div key={comment._id}>
+          
             <div className="chat chat-start">
+      
   <div className="chat-image avatar">
     <div className="w-20 rounded-full ">
       <img  src={comment?.photo} />
     </div>
+    <di></di>
   </div>
+  <div className='align-middle'> <h1 className='text-white font-bold'>My Rating</h1><Rating className='text-center'
+      style={{ maxWidth: 180 }}
+      value={comment.number}
+      readOnly
+    /></div>
   <div className="chat-bubble bg-white text-black my-4 animate__animated animate__backInLeft animate__delay-2s"><h1>{comment.message}</h1></div>
 </div>
 
